@@ -1,0 +1,67 @@
+digraph BST {
+label=<<B>TREE</B>>;
+ fontcolor="#008000";
+ fontname="Arial";
+ labelloc="top";
+ labeljust="left";
+ fontsize=20;
+
+
+node[shape=box, width=0.7, height=0.4, style="filled, rounded", fontname="Arial"];
+
+
+
+  node_0 [label="adres = 0x4a7d2b0 | {data = 4.000000 | type =2} | {son1 = 0x4a7d250 | son2 = 0x4a7cfb0} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  node_0 -> node_1 [color=blue, penwidth=2];
+  node_1 [label="adres = 0x4a7d250 | {data = 3.000000 | type =2} | {son1 = 0x4a7d1f0 | son2 = 0x4a7d0d0} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  node_1 -> node_2 [color=blue, penwidth=2];
+  node_2 [label="adres = 0x4a7d1f0 | {data = 4.000000 | type =2} | {son1 = 0x4a7d190 | son2 = 0x4a7d130} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  node_2 -> node_3 [color=blue, penwidth=2];
+  node_3 [label="adres = 0x4a7d190 | {data = 1.000000 | type =1} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  null_left_0 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_3 -> null_left_0 [color=blue, style=dotted];
+  null_right_1 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_3 -> null_right_1 [color=red, style=dotted];
+  node_2 -> node_4 [color=red, penwidth=2];
+  node_4 [label="adres = 0x4a7d130 | {data = 0.000000 | type =3} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  null_left_2 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_4 -> null_left_2 [color=blue, style=dotted];
+  null_right_3 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_4 -> null_right_3 [color=red, style=dotted];
+  node_1 -> node_5 [color=red, penwidth=2];
+  node_5 [label="adres = 0x4a7d0d0 | {data = 6.000000 | type =2} | {son1 = 0x4a7d070 | son2 = 0x4a7d010} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  node_5 -> node_6 [color=blue, penwidth=2];
+  node_6 [label="adres = 0x4a7d070 | {data = 2.718282 | type =1} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  null_left_4 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_6 -> null_left_4 [color=blue, style=dotted];
+  null_right_5 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_6 -> null_right_5 [color=red, style=dotted];
+  node_5 -> node_7 [color=red, penwidth=2];
+  node_7 [label="adres = 0x4a7d010 | {data = 12.000000 | type =1} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  null_left_6 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_7 -> null_left_6 [color=blue, style=dotted];
+  null_right_7 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_7 -> null_right_7 [color=red, style=dotted];
+  node_0 -> node_8 [color=red, penwidth=2];
+  node_8 [label="adres = 0x4a7cfb0 | {data = 5.000000 | type =2} | {son1 = 0x4a7cf50 | son2 = 0x4a7ce30} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  node_8 -> node_9 [color=blue, penwidth=2];
+  node_9 [label="adres = 0x4a7cf50 | {data = 6.000000 | type =2} | {son1 = 0x4a7cef0 | son2 = 0x4a7ce90} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  node_9 -> node_10 [color=blue, penwidth=2];
+  node_10 [label="adres = 0x4a7cef0 | {data = 2.718282 | type =1} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  null_left_8 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_10 -> null_left_8 [color=blue, style=dotted];
+  null_right_9 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_10 -> null_right_9 [color=red, style=dotted];
+  node_9 -> node_11 [color=red, penwidth=2];
+  node_11 [label="adres = 0x4a7ce90 | {data = 12.000000 | type =1} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  null_left_10 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_11 -> null_left_10 [color=blue, style=dotted];
+  null_right_11 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_11 -> null_right_11 [color=red, style=dotted];
+  node_8 -> node_12 [color=red, penwidth=2];
+  node_12 [label="adres = 0x4a7ce30 | {data = 2.000000 | type =1} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  null_left_12 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_12 -> null_left_12 [color=blue, style=dotted];
+  null_right_13 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
+  node_12 -> null_right_13 [color=red, style=dotted];
+}

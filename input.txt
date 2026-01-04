@@ -1,0 +1,7 @@
+ ("^" ("x" (nil) (nil)) ("x" (nil) (nil)))
+ ("+" ("*" ("x" (nil) (nil)) ("x" (nil) (nil)))  ("x" (nil) (nil))) 
+ ("x" (nil) (nil))
+ ("+" ("x" (nil) (nil))("1" (nil) (nil) ))
+ ("cos" ("x" (nil) (nil)) (nil))
+ ("/" ("x" (nil) (nil)) ("+" ("x" (nil) (nil)) ("1" (nil) (nil))))
+ 
