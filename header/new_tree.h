@@ -86,6 +86,8 @@ struct tree* ReadTreeFunction(FILE* read_file);
 
 struct tree* ReadRoot(char* buffer, size_t size_buffer);
 
+bool TreeComparison(struct tree* root1, struct tree* root2);
+
 size_t TreeDestroy(struct tree* root);
 
 #endif

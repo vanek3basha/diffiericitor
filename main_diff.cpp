@@ -5,30 +5,67 @@
 #include "header/latex_dump.h"
 #include "header/formulas_simplifier.h"
 #include "header/reader.h"
+#include "header/test.h"
 
-
-
-
-int main()
+int main(int argc, char* argv[])
 {
+    if(argc < 2) 
+    {
+        perror("argc < 2\n");
+        return -1;
+    }
+    char* filename = argv[1];
+    
     char stroka[256];
     char var_diferr[100]; 
 
-    fprintf(stdout, "enter line\n");
-    fgets(stroka, sizeof(stroka), stdin);
+    if(!strcmp(filename, "test"))
+    {
+        test_diferenciator();
+        fprintf(stdout, "Want you continue?(0 - continue, another - don\'t continue\n");
+        int CONTINUE_MARKER;
+        fscanf(stdin, "%d", &CONTINUE_MARKER);
+        if(CONTINUE_MARKER)
+        {
+            return 0;
+        }
+    }
+    if(!strcmp(filename, "stdin"))
+    {
+        fprintf(stdout, "enter line\n");
+
+        fgets(stroka, sizeof(stroka), stdin);
+
+        fprintf(stdout, "enter var for differincation\n");
+
+        fscanf(stdin, "%s", var_diferr);
+    }
+    else
+    {
+        FILE* input_file = fopen(filename, "r");
+        if(input_file == NULL)
+        {
+            perror("input_file - NULL\n");
+            return -1;
+        }
+
+        fgets(stroka, sizeof(stroka), input_file);
+        
+        
+        fscanf(input_file, "%s", var_diferr);
+
+        fclose(input_file);
+    }
 
     char* str_ptr = stroka;
 
     struct data_baze_of_variable* VAR = init_void_var_struct(1);
-    struct tree* root = Parsing(&str_ptr, VAR);
     
-    fprintf(stdout, "enter var for differincation\n");
+    struct tree* root_parsing = Parsing(&str_ptr, VAR);
     
-    scanf("%s", var_diferr);
+    struct tree* root_differ = DiffercationTreeFunction(root_parsing, VAR, var_diferr);
     
-    struct tree* after1 = DiffercationTreeFunction(root, VAR, var_diferr);
-    
-    struct tree* after = SimplifierTree(after1);
+    struct tree* root_simpler = SimplifierTree(root_differ);
     
     FILE* output_file = fopen("output.txt", "w");
     if (output_file == NULL)
@@ -37,7 +74,7 @@ int main()
         return -1;
     }
 
-    size_t size = TreePreorder(after, output_file);
+    size_t size = TreePreorder(root_simpler, output_file);
 
     fclose(output_file);
 
@@ -48,7 +85,7 @@ int main()
         return -1;
     }
 
-    save_tree_to_dot_string(after, dot_file);
+    save_tree_to_dot_string(root_simpler, dot_file);
 
     fclose(dot_file);
 
@@ -59,7 +96,7 @@ int main()
         return -1;
     }
 
-    LatexDump(after, tex_file, VAR);
+    LatexDump(root_simpler, tex_file, VAR);
 
     fclose(tex_file);
 
@@ -67,11 +104,11 @@ int main()
 
     system("pdflatex -output-directory=\"latex_file\" dumptex.tex");
 
-    TreeDestroy(root);
+    TreeDestroy(root_parsing);
 
-    TreeDestroy(after);
+    TreeDestroy(root_differ);
 
-    TreeDestroy(after1);
+    TreeDestroy(root_simpler);
 
     destroy_var_struct(VAR);
 

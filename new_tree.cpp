@@ -1,7 +1,7 @@
 #include <string.h>
 #include "header/new_tree.h"
 #include "header/operator_function.h"
-
+#include "header/sravnenie.h"
 /********************************************************************************************************************/
 
 struct tree* NewNode(data_type data_n, node_of_tree_type type_node_n, struct tree* son1_n, struct tree* son2_n)
@@ -225,6 +225,29 @@ struct tree* ReadRoot(char* buffer, size_t size_buffer)
     free(son2_buffer);
     free(temp_buffer);
     return root;
+}
+
+/********************************************************************************************************/
+
+bool TreeComparison(struct tree* root1, struct tree* root2)
+{
+    if(root1 == NULL && root2 == NULL)
+    {
+        return true;
+    }
+
+    if(root1 == NULL || root2 == NULL)
+    {
+        return false;
+    }
+    
+    if(!CompareFloats(root1->data,root2->data) || root1->type_node != root2->type_node)
+    {
+        fprintf(stderr, "%f %f here\n", root1->data, root2->data);
+        return false;
+    }
+
+    return (TreeComparison(root1->son1, root2->son1) || TreeComparison(root1->son2, root2->son2));
 }
 
 /********************************************************************************************************/

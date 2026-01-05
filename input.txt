@@ -1,3 +1,5 @@
+x ^ x
+x
  ("^" ("x" (nil) (nil)) ("x" (nil) (nil)))
  ("+" ("*" ("x" (nil) (nil)) ("x" (nil) (nil)))  ("x" (nil) (nil))) 
  ("x" (nil) (nil))
