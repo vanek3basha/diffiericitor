@@ -1,4 +1,5 @@
 #include "header/gener_tree_dump.h"
+#include "header/new_tree.h"
 #include <stdio.h>
 
 
@@ -17,10 +18,23 @@ void generate_dot_string(struct tree* root, FILE *file)
     static int node_count = 0;
     int current_id = node_count++;
 
+    if(root->type_node == NUMBER)
+    {
+    fprintf(file, "  node_%d [label=\"adres = %p | {data = %f | type = NUMBER} | {son1 = %p | son2 = %p} \", shape=record, style=\"filled,rounded\", fillcolor=lightblue, width=0.8, height=0.6];\n",  \
+            current_id, root, root->data, root->son1, root->son2);
+    }
+    if(root->type_node == OPERATOR)
+    {
+    fprintf(file, "  node_%d [label=\"adres = %p | {data = %f | type = OPERATOR} | {son1 = %p | son2 = %p} \", shape=record, style=\"filled,rounded\", fillcolor=lightblue, width=0.8, height=0.6];\n",  \
+            current_id, root, root->data, root->son1, root->son2);
+    }
+    if(root->type_node == VARIABLE)
+    {
+    fprintf(file, "  node_%d [label=\"adres = %p | {data = %f | type = VARIABLE} | {son1 = %p | son2 = %p} \", shape=record, style=\"filled,rounded\", fillcolor=lightblue, width=0.8, height=0.6];\n",  \
+            current_id, root, root->data, root->son1, root->son2);
+    }
 
-    fprintf(file, "  node_%d [label=\"adres = %p | {data = %f | type =%zu} | {son1 = %p | son2 = %p} \", shape=record, style=\"filled,rounded\", fillcolor=lightblue, width=0.8, height=0.6];\n",  \
-            current_id, root, root->data, root->type_node, root->son1, root->son2);
-    
+
     if (root->son1 != NULL) 
     {
         int left_id = node_count;

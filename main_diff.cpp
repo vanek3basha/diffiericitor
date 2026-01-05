@@ -22,13 +22,13 @@ int main(int argc, char* argv[])
     if(!strcmp(filename, "test"))
     {
         test_diferenciator();
-        fprintf(stdout, "Want you continue?(0 - continue, another - don\'t continue\n");
-        int CONTINUE_MARKER;
-        fscanf(stdin, "%d", &CONTINUE_MARKER);
-        if(CONTINUE_MARKER)
-        {
+        // fprintf(stdout, "Want you continue?(0 - continue, another - don\'t continue\n");
+        // int CONTINUE_MARKER;
+        // fscanf(stdin, "%d", &CONTINUE_MARKER);
+        // if(CONTINUE_MARKER)
+        // {
             return 0;
-        }
+        // }
     }
     if(!strcmp(filename, "stdin"))
     {
