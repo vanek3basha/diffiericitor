@@ -78,7 +78,7 @@ int main(int argc, char* argv[])
 
     fclose(output_file);
 
-    FILE* dot_file = fopen("dot_file.dot", "w");
+    FILE* dot_file = fopen("dot_file/dot_file.dot", "w");
     if (dot_file == NULL)
     {
         perror("ERROR FOR OPEN DOT FILE");
@@ -100,7 +100,7 @@ int main(int argc, char* argv[])
 
     fclose(tex_file);
 
-    system("dot -Tpng dot_file.dot -o graph.png");
+    system("dot -Tpng dot_file/dot_file.dot -o dot_file/graph.png");
 
     system("pdflatex -output-directory=\"latex_file\" dumptex.tex");
 

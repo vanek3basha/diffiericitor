@@ -11,7 +11,7 @@ node[shape=box, width=0.7, height=0.4, style="filled, rounded", fontname="Arial"
 
 
 
-  node_0 [label="adres = 0x4a79e90 | {data = 2.000000 | type =1} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
+  node_0 [label="adres = 0x4a78cf0 | {data = 1.000000 | type =1} | {son1 = (nil) | son2 = (nil)} ", shape=record, style="filled,rounded", fillcolor=lightblue, width=0.8, height=0.6];
   null_left_0 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
   node_0 -> null_left_0 [color=blue, style=dotted];
   null_right_1 [label = NULL, shape=box, style="filled,rounded", fillcolor=pink, width=0.8, height=0.6];
